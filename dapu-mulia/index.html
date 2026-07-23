@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapu Mulia - Toko Kue & Snack Homemade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-cookie-bite"></i>
+                <h1>Dapu Mulia</h1>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Menu</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li>
+                    <a href="#" class="admin-btn" id="adminBtn" title="Kelola Produk">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cart" class="cart-icon" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Homemade & Premium</span>
+            <h1>Selamat Datang di <span class="highlight">Dapu Mulia</span></h1>
+            <p>Nikmati kelezatan kue dan snack homemade berkualitas tinggi, dibuat dengan cinta dan bahan-bahan terbaik. Setiap gigitan adalah kebahagiaan!</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> Lihat Menu
+                </a>
+                <a href="https://wa.me/6281273127063" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Pesan Lewat WA
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-cakes">
+                <i class="fas fa-birthday-cake"></i>
+                <i class="fas fa-cookie"></i>
+                <i class="fas fa-candy-cane"></i>
+                <i class="fas fa-cupcake"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="categories" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Menu Kami</span>
+                <h2>Pilihan <span class="highlight">Kue & Snack</span></h2>
+                <p>Berbagai macam kue dan snack homemade pilihan untuk anda</p>
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="kue-kering">Kue Kering</button>
+                <button class="filter-btn" data-filter="kue-basah">Kue Basah</button>
+                <button class="filter-btn" data-filter="roti">Roti & Pastry</button>
+                <button class="filter-btn" data-filter="snack">Snack</button>
+                <button class="filter-btn" data-filter="minuman">Minuman</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Keranjang Belanja</h2>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Keranjang masih kosong</p>
+                <span>Yuk tambah menu favoritmu!</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">Rp 0</span>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+                <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-icon-grid">
+                        <i class="fas fa-birthday-cake"></i>
+                        <i class="fas fa-cookie"></i>
+                        <i class="fas fa-mug-hot"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-tag">Tentang Kami</span>
+                    <h2>Cerita <span class="highlight">Dapu Mulia</span></h2>
+                    <p>Dapu Mulia adalah toko kue dan snack homemade yang berdiri dengan penuh cinta. Setiap produk dibuat dengan resep turun-temurun dan bahan-bahan premium pilihan.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Bahan Premium</h4>
+                                <p>Hanya menggunakan bahan terbaik</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <div>
+                                <h4>Homemade</h4>
+                                <p>Dibuat dengan cinta dan higienis</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Pengiriman</h4>
+                                <p>Melayani pengiriman ke seluruh kota</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-thumbs-up"></i>
+                            <div>
+                                <h4>Terpercaya</h4>
+                                <p>Sudah dipercaya banyak pelanggan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimoni</span>
+                <h2>Apa Kata <span class="highlight">Pelanggan</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Kuenya enak banget, lembut dan manisnya pas. Anak-anak saya suka sekali! Pasti order lagi."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Ibu Sarah</strong>
+                            <span>Pelanggan Setia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Snack-nya renyah dan tidak berminyak. Cocok banget buat cemilan di rumah. Pengiriman juga cepat!"</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Mba Dinda</strong>
+                            <span>Pelanggan Baru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Saya pesan untuk acara ulang tahun anak, semua tamu pada suka. Roti-rotinya fresh banget! Recommended!"</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <div>
+                            <strong>Pak Budi</strong>
+                            <span>Pelanggan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / WhatsApp Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kontak</span>
+                <h2>Hubungi <span class="highlight">Kami</span></h2>
+                <p>Pesan sekarang via WhatsApp atau datang langsung ke toko kami</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>0812-7312-7063</p>
+                        <a href="https://wa.me/6281273127063" target="_blank" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Chat Sekarang
+                        </a>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Alamat</h3>
+                        <p>Jl. Mulia Raya No. 123</p>
+                        <p>Kota Anda</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Jam Operasional</h3>
+                        <p>Senin - Sabtu: 08.00 - 20.00</p>
+                        <p>Minggu: 09.00 - 17.00</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-instagram"></i>
+                        <h3>Instagram</h3>
+                        <p>@dapumulia</p>
+                        <a href="https://instagram.com/dapumulia" target="_blank" class="btn btn-primary" style="background: #E1306C;">
+                            <i class="fab fa-instagram"></i> Follow
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-cookie-bite"></i>
+                    <h3>Dapu Mulia</h3>
+                    <p>Homemade kue & snack berkualitas untuk anda dan keluarga.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Menu</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Kategori</h4>
+                    <ul>
+                        <li><a href="#">Kue Kering</a></li>
+                        <li><a href="#">Kue Basah</a></li>
+                        <li><a href="#">Roti & Pastry</a></li>
+                        <li><a href="#">Snack</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/6281273127063" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/dapumulia" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dapu Mulia. All rights reserved. | Made with <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item ditambahkan ke keranjang!</span>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
